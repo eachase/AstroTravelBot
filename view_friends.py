@@ -48,14 +48,20 @@ api = twitter.Api(consumer_key=consumer_key,
 
 users = api.GetFollowers()
 
+
+for friend in users:
+    print([friend.name,friend.location])
+
+memberships = api.GetMemberships(user_id=None, screen_name=None, count=20, cursor=-1, filter_to_owned_lists=False)    
+
 #api.GetUser(user)
 
 #print([u.screen_name for u in users])
-print([u.screen_name for u in users])
+#print([u.screen_name for u in users])
 
 
-for u in users:
-    status = api.PostUpdate('@'+ u.screen_name +' I am alive')
+#for u in users:
+#    status = api.PostUpdate('@'+ u.screen_name +' I am alive')
 
 
 
